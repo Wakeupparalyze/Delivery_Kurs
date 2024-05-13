@@ -1,0 +1,16 @@
+﻿<Window x:Class="Delivery_Kurs.BalanceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Delivery_Kurs"
+        mc:Ignorable="d"
+        Title="BalanceWindow" Background="Gray" Height="300" Width="250" MinHeight="300" MinWidth="250">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Введите сумму"/>
+            <TextBox Margin="0 5 0 0"/>
+            <Button Click="AddBalanceBtn" Margin="0 5 0 0" Content="Пополнить" Background="LightGray"/>
+        </StackPanel>
+    </Grid>
+</Window>
