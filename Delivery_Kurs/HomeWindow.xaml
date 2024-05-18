@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Delivery_Kurs"
         mc:Ignorable="d"
-        Title="Main" Height="450" Width="800" MinHeight="450" MinWidth="800">  
+        Title="Main" Height="450" Width="800" MinHeight="450" MinWidth="800" Loaded="WindowLoaded">  
     <Grid Background="Gray">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -25,6 +25,31 @@
             <Label Margin="0 8 0 0" Content="Баланс:"/>
             <Button Click="BasketBtn" Background="LightGray" Margin="10" VerticalAlignment="Top" Content="Корзина"/>
             <Button Click="ExitBtn" Background="LightGray" Margin="10" VerticalAlignment="Top" Content="Выход"/>
+            
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <ListBox Foreground="Black" x:Name="listboxDishes" SelectionChanged="dishchange" Margin="10" Height="497" Width="791">
+                <ListBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#CF89A9AF"/>
+                        <GradientStop Color="#FFDEA7FF" Offset="1"/>
+                        <GradientStop Color="#FF9E00FF" Offset="0.983"/>
+                    </LinearGradientBrush>
+                </ListBox.BorderBrush>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Border CornerRadius="8,0,8,0" Width="50" Height="50"  Margin="5">
+                                <Border.Background>
+                                    <ImageBrush Stretch="Fill" ImageSource="{Binding Image}"/>
+                                </Border.Background>
+                            </Border>
+
+                            <TextBlock Text="{Binding Name}" Foreground="Black"  VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
     </Grid>
 </Window>
